@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/dexFragment">
+
+    <fragment
+        android:id="@+id/dexFragment"
+        android:name="com.example.worldex.ui.dex.DexFragment"
+        android:label="fragment_dex"
+        tools:layout="@layout/fragment_dex" >
+        <action
+            android:id="@+id/action_dexFragment_to_dexListAtivity"
+            app:destination="@id/dexListAtivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/catchingFragment"
+        android:name="com.example.worldex.ui.catching.CatchingFragment"
+        android:label="fragment_catching"
+        tools:layout="@layout/fragment_catching" />
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.worldex.ui.shop.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+    <activity
+        android:id="@+id/dexListAtivity"
+        android:name="com.example.worldex.ui.DexList.DexListAtivity"
+        android:label="activity_dex_list_ativity"
+        tools:layout="@layout/activity_dex_list_ativity">
+        <argument
+            android:name="type"
+            app:argType="com.example.worldex.domain.model.DexModel" />
+    </activity>
+</navigation>

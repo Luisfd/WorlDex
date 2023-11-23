@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WorlDex</string>
+
+    <!-- BottomBar-->
+    <string name="dex">Dex</string>
+    <string name="catching">Catching</string>
+    <string name="shop">Shop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="bulbasaur">Bulbasaur</string>
+    <string name="ivysaur">Ivysaur</string>
+    <string name="venusaur">Venusaur</string>
+    <string name="charmander">Charmander</string>
+</resources>
