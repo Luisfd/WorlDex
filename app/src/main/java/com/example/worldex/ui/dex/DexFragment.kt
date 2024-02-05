@@ -51,8 +51,8 @@ class DexFragment : Fragment() {
         dexAdapter = DexAdapter(onItemSelected = {
             val type:DexModel = when(it){
                 Bulbasaur -> DexModel.Bulbasaur
-                Ivysaur -> DexModel.Ivysur
-                Venusaur -> DexModel.Venusur
+                Ivysaur -> DexModel.Ivysaur
+                Venusaur -> DexModel.Venusaur
                 Charmander -> DexModel.Charmander
                 }
             findNavController().navigate(

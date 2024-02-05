@@ -3,6 +3,7 @@ package com.example.worldex.ui.DexList
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.worldex.domain.model.DexInfo
 import com.example.worldex.domain.model.DexModel
 import com.example.worldex.domain.model.PokeEntryModel
 import com.example.worldex.domain.model.PokeModel
@@ -27,7 +28,13 @@ class DexListViewModel @Inject constructor(private val getListPokemonUseCase: Ge
         //dex = type
         viewModelScope.launch {
             _state.value = DexListState.Loading
-            val result = withContext(Dispatchers.IO){getListPokemonUseCase(type.name)}
+            val num:String = when(type){
+                DexModel.Bulbasaur -> "1"
+                DexModel.Ivysaur -> "2"
+                DexModel.Venusaur -> "3"
+                DexModel.Charmander -> "4"
+            }
+            val result = withContext(Dispatchers.IO){getListPokemonUseCase(num)}
             if(result!=null){
                 //convertResult(result)
                 _state.value = DexListState.Success(result)

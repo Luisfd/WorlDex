@@ -9,7 +9,7 @@ import javax.inject.Inject
 class RepositoryImpl @Inject constructor(private val apiService: DexApiService): Repository {
 
     override suspend fun getListPokemon(type: String): List<PokeModel>? {
-        runCatching {  apiService.getDex("1")}//type)}
+        runCatching {  apiService.getDex(type)}//type)}
             .onSuccess { return it.toDomain()}
             .onFailure { Log.i("problemas","Ha ocurrido un error ${it.message}") }
         return null

@@ -21,10 +21,12 @@ data class DexResponse(
         for (posicion in pokemon_entries.indices){
             var pokeEntry : PokeEntryModel = pokemon_entries.elementAt(posicion)
             val id = pokeEntry.entry_number
+            val url = pokeEntry.pokemon_species.url
+            val idPoke = url.substringAfter("https://pokeapi.co/api/v2/pokemon-species/").substringBefore('/')
             var pokeModel = PokeModel(
                 id,
                 pokeEntry.pokemon_species.name,
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png"
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$idPoke.png"
             )
             pokeList.add(pokeModel)
         }
