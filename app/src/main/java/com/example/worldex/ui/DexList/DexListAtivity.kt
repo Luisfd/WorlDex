@@ -124,4 +124,11 @@ class DexListAtivity : AppCompatActivity() {
             adapter = dexListAdapter
         }
     }
+
+    @Override
+    override fun onBackPressed() {
+        // start your activity by passing the intent
+        startActivity(Intent(this, MainActivity::class.java))
+        super.onBackPressed()
+    }
 }

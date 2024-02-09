@@ -7,10 +7,10 @@ import javax.inject.Inject
 class DexProvider @Inject constructor() {
     fun getDex(): List<DexInfo>{
         return listOf(
-            Bulbasaur,
+          /*  Bulbasaur,
             Ivysaur,
             Venusaur,
-            Charmander
+            Charmander*/
         )
     }
 }

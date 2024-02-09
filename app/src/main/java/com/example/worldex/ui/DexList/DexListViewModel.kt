@@ -24,17 +24,11 @@ class DexListViewModel @Inject constructor(private val getListPokemonUseCase: Ge
 
     //lateinit var dex:DexModel
 
-    fun getListPokemon(type: DexModel) {
+    fun getListPokemon(type: String) {
         //dex = type
         viewModelScope.launch {
             _state.value = DexListState.Loading
-            val num:String = when(type){
-                DexModel.Bulbasaur -> "1"
-                DexModel.Ivysaur -> "2"
-                DexModel.Venusaur -> "3"
-                DexModel.Charmander -> "4"
-            }
-            val result = withContext(Dispatchers.IO){getListPokemonUseCase(num)}
+            val result = withContext(Dispatchers.IO){getListPokemonUseCase(type)}
             if(result!=null){
                 //convertResult(result)
                 _state.value = DexListState.Success(result)

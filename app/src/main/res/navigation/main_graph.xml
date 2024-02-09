@@ -31,6 +31,6 @@
         tools:layout="@layout/activity_dex_list_ativity">
         <argument
             android:name="type"
-            app:argType="com.example.worldex.domain.model.DexModel" />
+            app:argType="string" />
     </activity>
 </navigation>
